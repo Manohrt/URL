@@ -1,0 +1,24 @@
+<div class="card new_link_url">
+  <div class="card-body">
+  	<table>
+  		<thead>
+  			<tr>
+  				<th>Short Url</th>
+  				<th></th>
+  				<th>Original Url</th>
+  			</tr>
+  		</thead>
+  	<tbody>
+<%@url.each do |url| %>
+<tr>
+<td>
+	<%= link_to url.random_id, link_urls_show_path(:id => url.random_id)%></td> <td>=></td><td><%= url.original_url%></td>
+
+</tr>
+<%end%>
+</tbody>
+</table>
+  </div>
+</div>
+
+<%= link_to "New URL",link_urls_new_path%>

@@ -1,0 +1,16 @@
+<div class="new_link_url">
+	<div class="error">
+<% @url.errors.each do | attr,msg |%>
+<%= msg%> on <%= attr %>
+<%end%>
+</div>
+<%= form_for @url,:url => link_urls_create_url do | f |%>
+
+<p>
+	<%= f.label :original_url %> : <%= f.text_field :original_url%>
+</p>
+<%= f.hidden_field :random_id,:value => @url.random_id%>
+<%= f.submit "Shorten Url "%>
+<%end%>
+</div>
+<%= link_to "Home",link_urls_index_path%>
